@@ -31,6 +31,24 @@
 本课程使用的开发工具是WebStorm，官方下载地址点击[这里](https://www.jetbrains.com/webstorm/download)
 有兴趣的童鞋可以共同参与开发，可以添加我的微信号：wx406151651，QQ：406151651共同参与开发讨论。谢谢合作！！！
 
+### 启动项目
 
-
-
+```bash
+# - windows
+# install nvm
+choco install nvm
+# 下载对应的 node 版本
+nvm install 14.0.0
+nvm use 14.0.0
+# 设置环境变量
+set SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/
+# 下载 nrm cnpm
+npm i nrm -g
+npm i cnpm -g
+# 切换到淘宝源
+nrm use taobao
+# 下载相关依赖
+cnpm i
+# 测试环境启动
+npm run dev
+```
