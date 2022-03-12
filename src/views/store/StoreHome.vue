@@ -114,13 +114,13 @@
             // 获取openid
             if (this.getCookie('openid') === null) {
                 this.login = true
-                location.href = process.env.VUE_APP_BASE_URL + '/wechat/authorize?returnUrl=' + encodeURIComponent(process.env.VUE_APP_HOME_NGINX_URL + '/#/')
+                // location.href = process.env.VUE_APP_BASE_URL + '/wechat/authorize?returnUrl=' + encodeURIComponent(process.env.VUE_APP_HOME_NGINX_URL + '/#/')
             }
             this.login = false
             home(this.openid).then(response => {
-                if (response && response.status === 200 && response.data && response.data.err_no === 0) {
-                    this.lists = response.data.data
-                    // console.log(this.lists)
+                if (response && response.status === 200) {
+                    this.lists = response.data
+                    console.log(response)
                     const randomIndex = Math.floor(Math.random() * this.lists.random.length)
                     this.random = this.lists.random[randomIndex]
                     this.banner = this.lists.banner
